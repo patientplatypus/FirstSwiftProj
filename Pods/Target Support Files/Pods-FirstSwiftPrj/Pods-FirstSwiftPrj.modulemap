@@ -1,0 +1,6 @@
+framework module Pods_FirstSwiftPrj {
+  umbrella header "Pods-FirstSwiftPrj-umbrella.h"
+
+  export *
+  module * { export * }
+}
