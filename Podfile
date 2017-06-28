@@ -14,4 +14,5 @@
     target 'FirstSwiftPrj' do
         pod 'Alamofire', '~> 4.4'
         pod 'SwiftyJSON'
+        pod 'ReSwift'
     end

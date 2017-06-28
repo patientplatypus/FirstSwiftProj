@@ -18,6 +18,9 @@ var app = express();
 
 mongoose.connect(process.env.db_conn);
 
+//oath client_id
+//130896312671-0am3h0ro6ovhhggfp8oon5i17ru8vts0.apps.googleusercontent.com
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

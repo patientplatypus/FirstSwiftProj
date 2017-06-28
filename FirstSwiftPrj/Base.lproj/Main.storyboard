@@ -150,13 +150,6 @@
                                     <segue destination="qNy-ut-A6Y" kind="show" identifier="SB14Send" id="TDA-fi-0pr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-8a-Cl7">
-                                <rect key="frame" x="86" y="321" width="151" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlL-U7-shA">
                                 <rect key="frame" x="16" y="50" width="100" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,7 +161,6 @@
                     <tabBarItem key="tabBarItem" title="Item" id="owh-XI-qcQ"/>
                     <connections>
                         <outlet property="UserName" destination="wbk-Wm-KBw" id="ED2-r2-5PJ"/>
-                        <outlet property="returnedDataLabel" destination="9Vp-8a-Cl7" id="eCC-af-cYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		564684EDD87BB987A688DA51 /* Pods_FirstSwiftPrj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681656CCEE8951FB9E102415 /* Pods_FirstSwiftPrj.framework */; };
-		B65823831EFDAFD000492AA8 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65823821EFDAFD000492AA8 /* KeyboardManager.swift */; };
 		B69ECC161EFAF85D0094A360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69ECC151EFAF85D0094A360 /* AppDelegate.swift */; };
-		B69ECC181EFAF85D0094A360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69ECC171EFAF85D0094A360 /* ViewController.swift */; };
 		B69ECC1B1EFAF85D0094A360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69ECC191EFAF85D0094A360 /* Main.storyboard */; };
 		B69ECC1D1EFAF85D0094A360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69ECC1C1EFAF85D0094A360 /* Assets.xcassets */; };
 		B69ECC201EFAF85D0094A360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69ECC1E1EFAF85D0094A360 /* LaunchScreen.storyboard */; };
 		B69ECC301EFD8B430094A360 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B69ECC2F1EFD8B430094A360 /* DLRadioButton.m */; };
+		B6C7F5AA1F040A0E00DC1F17 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5A91F040A0E00DC1F17 /* Actions.swift */; };
+		B6C7F5AC1F040A1C00DC1F17 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5AB1F040A1C00DC1F17 /* Reducers.swift */; };
+		B6C7F5AE1F040A2D00DC1F17 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5AD1F040A2D00DC1F17 /* State.swift */; };
+		B6C7F5B31F0455A600DC1F17 /* ViewControllerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5B21F0455A600DC1F17 /* ViewControllerEntry.swift */; };
+		B6C7F5B51F04568E00DC1F17 /* ModalLoginFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5B41F04568E00DC1F17 /* ModalLoginFail.swift */; };
+		B6C7F5B71F0456BF00DC1F17 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5B61F0456BF00DC1F17 /* ViewController1.swift */; };
+		B6C7F5B91F0456EE00DC1F17 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5B81F0456EE00DC1F17 /* ViewController2.swift */; };
+		B6C7F5BB1F04573400DC1F17 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */; };
+		B6C7F5BD1F0457B800DC1F17 /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */; };
+		B6C7F5BF1F0457F600DC1F17 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		60C10098ACA566341E246A8F /* Pods-FirstSwiftPrj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSwiftPrj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstSwiftPrj/Pods-FirstSwiftPrj.debug.xcconfig"; sourceTree = "<group>"; };
 		681656CCEE8951FB9E102415 /* Pods_FirstSwiftPrj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstSwiftPrj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B65823821EFDAFD000492AA8 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		B69ECC121EFAF85D0094A360 /* FirstSwiftPrj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstSwiftPrj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69ECC151EFAF85D0094A360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B69ECC171EFAF85D0094A360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B69ECC1A1EFAF85D0094A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B69ECC1C1EFAF85D0094A360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69ECC1F1EFAF85D0094A360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +37,16 @@
 		B69ECC2D1EFD8B420094A360 /* FirstSwiftPrj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirstSwiftPrj-Bridging-Header.h"; sourceTree = "<group>"; };
 		B69ECC2E1EFD8B430094A360 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		B69ECC2F1EFD8B430094A360 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		B6C7F5A91F040A0E00DC1F17 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		B6C7F5AB1F040A1C00DC1F17 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
+		B6C7F5AD1F040A2D00DC1F17 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		B6C7F5B21F0455A600DC1F17 /* ViewControllerEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerEntry.swift; sourceTree = "<group>"; };
+		B6C7F5B41F04568E00DC1F17 /* ModalLoginFail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLoginFail.swift; sourceTree = "<group>"; };
+		B6C7F5B61F0456BF00DC1F17 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		B6C7F5B81F0456EE00DC1F17 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
+		B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
 		B72CF47EA3E222764A56D86F /* Pods-FirstSwiftPrj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSwiftPrj.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstSwiftPrj/Pods-FirstSwiftPrj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,8 +92,16 @@
 			isa = PBXGroup;
 			children = (
 				B69ECC151EFAF85D0094A360 /* AppDelegate.swift */,
-				B69ECC171EFAF85D0094A360 /* ViewController.swift */,
-				B65823821EFDAFD000492AA8 /* KeyboardManager.swift */,
+				B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */,
+				B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */,
+				B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */,
+				B6C7F5B81F0456EE00DC1F17 /* ViewController2.swift */,
+				B6C7F5B61F0456BF00DC1F17 /* ViewController1.swift */,
+				B6C7F5B41F04568E00DC1F17 /* ModalLoginFail.swift */,
+				B6C7F5B21F0455A600DC1F17 /* ViewControllerEntry.swift */,
+				B6C7F5A91F040A0E00DC1F17 /* Actions.swift */,
+				B6C7F5AB1F040A1C00DC1F17 /* Reducers.swift */,
+				B6C7F5AD1F040A2D00DC1F17 /* State.swift */,
 				B69ECC191EFAF85D0094A360 /* Main.storyboard */,
 				B69ECC1C1EFAF85D0094A360 /* Assets.xcassets */,
 				B69ECC1E1EFAF85D0094A360 /* LaunchScreen.storyboard */,
@@ -222,9 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65823831EFDAFD000492AA8 /* KeyboardManager.swift in Sources */,
-				B69ECC181EFAF85D0094A360 /* ViewController.swift in Sources */,
+				B6C7F5BB1F04573400DC1F17 /* ViewController3.swift in Sources */,
+				B6C7F5BD1F0457B800DC1F17 /* ModalController.swift in Sources */,
+				B6C7F5B71F0456BF00DC1F17 /* ViewController1.swift in Sources */,
+				B6C7F5AC1F040A1C00DC1F17 /* Reducers.swift in Sources */,
+				B6C7F5B51F04568E00DC1F17 /* ModalLoginFail.swift in Sources */,
+				B6C7F5B31F0455A600DC1F17 /* ViewControllerEntry.swift in Sources */,
+				B6C7F5AA1F040A0E00DC1F17 /* Actions.swift in Sources */,
+				B6C7F5B91F0456EE00DC1F17 /* ViewController2.swift in Sources */,
 				B69ECC301EFD8B430094A360 /* DLRadioButton.m in Sources */,
+				B6C7F5AE1F040A2D00DC1F17 /* State.swift in Sources */,
+				B6C7F5BF1F0457F600DC1F17 /* ViewController4.swift in Sources */,
 				B69ECC161EFAF85D0094A360 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
