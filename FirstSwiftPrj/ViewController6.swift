@@ -13,7 +13,79 @@ import Foundation
 import SwiftyJSON
 import ReSwift
 
-class ViewController6: UIViewController {
+class ViewController6: UIViewController, StoreSubscriber {
+    
+    var backgroundFood: String = ""
+//    var image: UIImage!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mainStore.subscribe(self)
+        
+        print("this is the value of the backgroundFood ", self.backgroundFood)
+        
+        let urlString = "http://localhost:3000/getimages"
+        
+        Alamofire.request(urlString, method: .post, parameters: ["search": self.backgroundFood],encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                let json = JSON(response.data!)
+//                print("this is the json data, ", json)
+//                var myDict = ["link": "", "title": ""]
+                for (_, subJson) in json["data"] {
+                    if let link = subJson["cover"].string {
+                        let imageLink = "http://i.imgur.com/" + link + "s.jpg"
+                        print("imageLink", imageLink)
+                        
+//                        DispatchQueue.main.async{
+//                            Alamofire.download(imageLink).responseData { response in
+//                                if let data = response.result.value {
+//                                    print("inside the data if")
+//                                    if let image = UIImage(data: data){
+//                                        print("inside the image if")
+//                                        self.view.backgroundColor = UIColor(patternImage: image)
+//                                    }
+//                                }
+//                            }
+//                        }
+                        
+                        if let url = URL(string: imageLink){
+                            do {
+                                print("inside do for url")
+                                let data = try Foundation.Data(contentsOf: url)
+                                DispatchQueue.main.async{
+                                    let image = UIImage(data: data)!
+                                    self.view.backgroundColor = UIColor(patternImage: image)
+                                }
+                            } catch {
+                                print("inside catch for url")
+                                print(error.localizedDescription)
+                            }
+                        }
+                        
+                        
+                        
+                        
 
+                        break
+                    }
+                }
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
 
+        
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        mainStore.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        backgroundFood = "\(mainStore.state.FavoriteFood)"
+    }
+    
+    
 }

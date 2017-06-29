@@ -95,11 +95,11 @@
 			children = (
 				B69ECC151EFAF85D0094A360 /* AppDelegate.swift */,
 				B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */,
-				B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */,
 				B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */,
 				B6C7F5B81F0456EE00DC1F17 /* ViewController2.swift */,
 				B6C7F5B61F0456BF00DC1F17 /* ViewController1.swift */,
 				B6C7F5C01F046FCA00DC1F17 /* ViewController6.swift */,
+				B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */,
 				B6C7F5B41F04568E00DC1F17 /* ModalLoginFail.swift */,
 				B6C7F5B21F0455A600DC1F17 /* ViewControllerEntry.swift */,
 				B6C7F5A91F040A0E00DC1F17 /* Actions.swift */,

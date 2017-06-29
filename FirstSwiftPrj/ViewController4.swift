@@ -22,11 +22,11 @@ class ViewController4: UIViewController,  UITextFieldDelegate, StoreSubscriber {
     @IBOutlet weak var TextField5Outlet: UITextField!
     @IBOutlet var ViewFrame: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var SaveProfileOutlet: UIButton!
     
     @IBAction func SaveProfileButton(_ sender: Any) {
         let urlString = "http://localhost:3000/saveprofile"
-        
+        SaveProfileOutlet.setTitle("Saving Now ... ",for: .normal)
         if Int(TextField2Outlet.text!) != nil {
             self.sendage = Int(TextField2Outlet.text!)!
         }else{
@@ -36,6 +36,7 @@ class ViewController4: UIViewController,  UITextFieldDelegate, StoreSubscriber {
         Alamofire.request(urlString, method: .post,
                           parameters:
                                 [
+                                    "username"      : "\(mainStore.state.LoginName)",
                                     "realname"      : TextField1Outlet.text!,
                                     "age"           : self.sendage,
                                     "gender"        : TextField3Outlet.text!,
@@ -48,6 +49,7 @@ class ViewController4: UIViewController,  UITextFieldDelegate, StoreSubscriber {
             case .success:
                 let json = JSON(response.data!)
                 print("this is the json data, ", json)
+                self.SaveProfileOutlet.setTitle("Profile UPDATED :P ",for: .normal)
                 break
             case .failure(let error):
                 print(error)

@@ -10,6 +10,8 @@ import Foundation
 import ReSwift
 
 
+
+
 struct dataText1Action: Action {
     let payload: String
 }

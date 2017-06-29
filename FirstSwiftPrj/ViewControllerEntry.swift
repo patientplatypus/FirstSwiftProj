@@ -15,36 +15,119 @@ import ReSwift
 
 class ViewControllerEntry: UIViewController, UITextFieldDelegate {
     
+    var dummy = ViewController6.self;
     var loginArray: [String] = ["Peter", "Peter Weyand", "Weyand", "platypus", "patientplatypus"]
     
     @IBOutlet weak var SplashLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var NameText: UITextField!
     @IBOutlet weak var LoginButtonOutlet: UIButton!
+    @IBOutlet weak var passwordOutlet: UITextField!
+    
+    @IBAction func SignUpAction(_ sender: Any) {
+//        res.json({"cantsignup":"someonehasthatname"});
+        
+        let urlString = "http://localhost:3000/signup"
+        
+        Alamofire.request(urlString, method: .post,
+                          parameters:
+            [
+                "username"      : self.NameText.text!,
+                "password"      : self.passwordOutlet.text!,
+            ],
+                          encoding: JSONEncoding.default, headers: nil).responseJSON {
+                            response in
+                            switch response.result {
+                            case .success:
+                                let json = JSON(response.data!)
+                                if (json["cantsignup"]=="someonehasthatname"){
+                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalLoginFail") as? ModalLoginFail
+                                    {
+                                        self.present(vc, animated: true, completion: nil)
+                                    }
+                                }else{
+                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    appDelegate.window?.rootViewController = tabBarVC
+                                }
+                                print("this is the json data, ", json)
+             
+                                break
+                            case .failure(let error):
+                                print(error)
+                            }
+        }
+        
+    }
     
     
     @IBAction func NameTextEdit(_ sender: UITextField) {
         NameLabel.text = NameText.text
         mainStore.dispatch(LoginNameAction(payload: NameText.text!));
-        
     }
     
+    //RealNameAction, AgeAction, GenderAction, FavoriteColorAction, FavoriteFoodAction,profileIMGURLAction,profileIMGTITLEAction
+    
     @IBAction func LoginButton(_ sender: Any) {
-        for i in 0..<loginArray.count {
-            if loginArray[i]==NameLabel.text{
-                
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = tabBarVC
-                
-            }
-        }
         
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalLoginFail") as? ModalLoginFail
-        {
-            present(vc, animated: true, completion: nil)
+        let urlString = "http://localhost:3000/login"
+        
+        Alamofire.request(urlString, method: .post,
+                          parameters:
+            [
+                "username"      : self.NameText.text!,
+                "password"      : self.passwordOutlet.text!,
+                ],
+                          encoding: JSONEncoding.default, headers: nil).responseJSON {
+                            response in
+                            switch response.result {
+                            case .success:
+                                let json = JSON(response.data!)
+                                print("this is the json data", json)
+                                print("this is the json gender data, ", json["loginFAIL"])
+                                if (json["loginFAIL"] == "u.sux")                                {
+                                    print("ohshit")
+                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalLoginFail") as? ModalLoginFail
+                                            {
+                                                self.present(vc, animated: true, completion: nil)
+                                            }
+//                                    break
+                                }else{
+                                mainStore.dispatch(RealNameAction(payload: (json["post"]["realname"].stringValue)))
+                                mainStore.dispatch(AgeAction(payload: Int((json["post"]["age"].stringValue))!))
+                                mainStore.dispatch(GenderAction(payload: (json["post"]["gender"].stringValue)))
+                                mainStore.dispatch(FavoriteColorAction(payload: (json["post"]["favoritecolor"].stringValue)))
+                                mainStore.dispatch(FavoriteFoodAction(payload: (json["post"]["favoritefood"].stringValue)))
+                                mainStore.dispatch(profileIMGURLAction(payload: (json["post"]["profileIMGURL"].stringValue)))
+                                mainStore.dispatch(profileIMGTITLEAction(payload: (json["post"]["profileIMGTITLE"].stringValue)))
+                                
+                                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = tabBarVC
+//                                break
+                                }
+                            case .failure(let error):
+                                print(error)
+                            }
         }
+//        
+//        for i in 0..<loginArray.count {
+//            if loginArray[i]==NameLabel.text{
+//                
+//                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let tabBarVC = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                appDelegate.window?.rootViewController = tabBarVC
+//                
+//            }
+//        }
+//        
+//        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalLoginFail") as? ModalLoginFail
+//        {
+//            present(vc, animated: true, completion: nil)
+//        }
     }
     
     
@@ -58,6 +141,8 @@ class ViewControllerEntry: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         NameText.returnKeyType = UIReturnKeyType.done
         NameText.delegate = self
+        passwordOutlet.returnKeyType = UIReturnKeyType.done
+        passwordOutlet.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

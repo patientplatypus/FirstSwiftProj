@@ -43,8 +43,8 @@ class ModalController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setButton.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0.5)
-        backButton.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0.5)
+        setButton.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 1.0)
+        backButton.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 1.0)
         if let url = URL(string: imgURL){
             do {
                 print("inside do for url")
@@ -64,7 +64,7 @@ class ModalController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 100/255, green: 100/255, blue: 200/255, alpha: 0.2)
+        view.backgroundColor = UIColor(red: 100/255, green: 100/255, blue: 200/255, alpha: 0.7)
         view.isOpaque = false
     }
     
