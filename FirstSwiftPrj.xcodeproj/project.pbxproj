@@ -23,6 +23,7 @@
 		B6C7F5BB1F04573400DC1F17 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */; };
 		B6C7F5BD1F0457B800DC1F17 /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */; };
 		B6C7F5BF1F0457F600DC1F17 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */; };
+		B6C7F5C11F046FCA00DC1F17 /* ViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7F5C01F046FCA00DC1F17 /* ViewController6.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		B6C7F5BC1F0457B800DC1F17 /* ModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
 		B6C7F5BE1F0457F600DC1F17 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		B6C7F5C01F046FCA00DC1F17 /* ViewController6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController6.swift; sourceTree = "<group>"; };
 		B72CF47EA3E222764A56D86F /* Pods-FirstSwiftPrj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSwiftPrj.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstSwiftPrj/Pods-FirstSwiftPrj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				B6C7F5BA1F04573400DC1F17 /* ViewController3.swift */,
 				B6C7F5B81F0456EE00DC1F17 /* ViewController2.swift */,
 				B6C7F5B61F0456BF00DC1F17 /* ViewController1.swift */,
+				B6C7F5C01F046FCA00DC1F17 /* ViewController6.swift */,
 				B6C7F5B41F04568E00DC1F17 /* ModalLoginFail.swift */,
 				B6C7F5B21F0455A600DC1F17 /* ViewControllerEntry.swift */,
 				B6C7F5A91F040A0E00DC1F17 /* Actions.swift */,
@@ -256,6 +259,7 @@
 				B6C7F5B91F0456EE00DC1F17 /* ViewController2.swift in Sources */,
 				B69ECC301EFD8B430094A360 /* DLRadioButton.m in Sources */,
 				B6C7F5AE1F040A2D00DC1F17 /* State.swift in Sources */,
+				B6C7F5C11F046FCA00DC1F17 /* ViewController6.swift in Sources */,
 				B6C7F5BF1F0457F600DC1F17 /* ViewController4.swift in Sources */,
 				B69ECC161EFAF85D0094A360 /* AppDelegate.swift in Sources */,
 			);

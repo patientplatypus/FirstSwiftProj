@@ -28,19 +28,6 @@ router.post('/getimages', function(req,res,next){
   console.log('successfully got to /getimages backend :P');
   console.log('the value of the search query is ', req.body.search);
   var url = 'https://api.imgur.com/3/gallery/search?q='+req.body.search;
-  // axios.defaults.headers.common['Authorization'] = 'Client-ID 4d9396cdcf5d6da';
-
-  // axios.get(url)
-  // .then(function (response) {
-  //   console.log('YATA from axios to imgur');
-  //   console.log(response);
-  //     res.json(response);
-  // })
-  // .catch(function (error) {
-  //   console.log('Fail from axios request to imgur');
-  //   console.log(error);
-  //     res.json({'OHNOES':'NOOOOYATA from getimages'});
-  // });
 
 
   search = req.body.search;
@@ -59,11 +46,12 @@ router.post('/getimages', function(req,res,next){
       console.log(error);
       res.json({'OHNOES':'NOOOOYATA from getimages'});
   });
+});
 
-
-
-
-})
+router.post('/saveprofile', function(req,res,next){
+  console.log("successfully got to /saveprofile on backend");
+  res.json({'YATA':'hooray from /saveprofile'});
+});
 
 
 

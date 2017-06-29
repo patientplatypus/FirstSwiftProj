@@ -12,6 +12,7 @@ import ReSwift
 class ViewController4: UIViewController,  UITextFieldDelegate, StoreSubscriber {
     
     var activeField: UITextField?
+    var sendage: Int?
     
     @IBOutlet weak var UserNameLabel: UILabel!
     @IBOutlet weak var TextField1Outlet: UITextField!
@@ -21,6 +22,40 @@ class ViewController4: UIViewController,  UITextFieldDelegate, StoreSubscriber {
     @IBOutlet weak var TextField5Outlet: UITextField!
     @IBOutlet var ViewFrame: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    @IBAction func SaveProfileButton(_ sender: Any) {
+        let urlString = "http://localhost:3000/saveprofile"
+        
+        if Int(TextField2Outlet.text!) != nil {
+            self.sendage = Int(TextField2Outlet.text!)!
+        }else{
+            self.sendage = -1
+        }
+
+        Alamofire.request(urlString, method: .post,
+                          parameters:
+                                [
+                                    "realname"      : TextField1Outlet.text!,
+                                    "age"           : self.sendage,
+                                    "gender"        : TextField3Outlet.text!,
+                                    "favoritecolor" : TextField4Outlet.text!,
+                                    "favoritefood"  : TextField5Outlet.text!
+                                ],
+            encoding: JSONEncoding.default, headers: nil).responseJSON {
+                response in
+            switch response.result {
+            case .success:
+                let json = JSON(response.data!)
+                print("this is the json data, ", json)
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
+    
     
     
     @IBAction func TextField1Action(_ sender: Any) {

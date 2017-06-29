@@ -21,15 +21,6 @@ class ViewController1: UIViewController, StoreSubscriber {
     var stringPassed = ""
     var returnedData = ""
     
-    @IBAction func SB3(_ sender: Any) {
-        performSegue(withIdentifier: "SB13Send", sender: nil)
-    }
-    
-    @IBAction func SB4Send(_ sender: Any) {
-        performSegue(withIdentifier: "SB14Send", sender: nil)
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mainStore.subscribe(self)

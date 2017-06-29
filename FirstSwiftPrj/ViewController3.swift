@@ -20,9 +20,7 @@ import ReSwift
 class ViewController3: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, StoreSubscriber {
     
     var dataState: Data?
-    
-    var linkArray = [String]()
-    var titleArray = [String]()
+    var imageArray = [[String:String]]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SearchTextField: UITextField!
@@ -33,8 +31,7 @@ class ViewController3: UIViewController, UITextFieldDelegate, UITableViewDataSou
     @IBAction func SearchButton(_ sender: Any) {
         
         let urlString = "http://localhost:3000/getimages"
-        self.titleArray = []
-        self.linkArray = []
+
         
         Alamofire.request(urlString, method: .post, parameters: ["search": SearchTextField.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
@@ -42,28 +39,32 @@ class ViewController3: UIViewController, UITextFieldDelegate, UITableViewDataSou
             case .success:
                 let json = JSON(response.data!)
                 print("this is the json data, ", json)
-                
-                
+                var linkIndex = 0
+                var tempDict = ["link": "", "title": ""]
                 for (_, subJson) in json["data"] {
                     if let link = subJson["cover"].string {
                         let imageLink = "http://i.imgur.com/" + link + ".jpg"
-                        self.linkArray.append(imageLink)
+                        tempDict["link"] = imageLink
                     }
                     if let title = subJson["title"].string{
-                        self.titleArray.append(title)
+                        tempDict["title"] = title
+                    }
+                    if ((tempDict["link"]?.characters.count)! > 0 && (tempDict["title"]?.characters.count)! > 0){
+                        self.imageArray.append(tempDict)
+                        tempDict = ["link": "", "title": ""]
+                        linkIndex += 1
                     }
                 }
-                print("this is linkArray ", self.linkArray)
-                print("this is titleArray ", self.titleArray)
                 self.dataUpdated()
                 break
             case .failure(let error):
                 print(error)
             }
         }
-        
-        
     }
+    
+    
+    
     
     
     @IBAction func BackToTabControl(_ sender: Any) {
@@ -113,13 +114,14 @@ class ViewController3: UIViewController, UITextFieldDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
+
+          return imageArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
-        
-        let text = self.titleArray[indexPath.row]
+
+        let text = self.imageArray[indexPath.row]["title"]
         
         cell.textLabel?.text = text
         
@@ -128,12 +130,12 @@ class ViewController3: UIViewController, UITextFieldDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row was clicked!")
-        print(self.titleArray[indexPath.row])
+        print(self.imageArray[indexPath.row]["title"] as Any)
         
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalController") as? ModalController
         {
-            vc.imgTITLE = self.titleArray[indexPath.row]
-            vc.imgURL = self.linkArray[indexPath.row]
+            vc.imgTITLE = self.imageArray[indexPath.row]["title"]!
+            vc.imgURL = self.imageArray[indexPath.row]["link"]!
             present(vc, animated: true, completion: nil)
         }
         
