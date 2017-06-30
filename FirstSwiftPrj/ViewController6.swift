@@ -30,24 +30,11 @@ class ViewController6: UIViewController, StoreSubscriber {
             switch response.result {
             case .success:
                 let json = JSON(response.data!)
-//                print("this is the json data, ", json)
-//                var myDict = ["link": "", "title": ""]
                 for (_, subJson) in json["data"] {
                     if let link = subJson["cover"].string {
                         let imageLink = "http://i.imgur.com/" + link + "s.jpg"
                         print("imageLink", imageLink)
                         
-//                        DispatchQueue.main.async{
-//                            Alamofire.download(imageLink).responseData { response in
-//                                if let data = response.result.value {
-//                                    print("inside the data if")
-//                                    if let image = UIImage(data: data){
-//                                        print("inside the image if")
-//                                        self.view.backgroundColor = UIColor(patternImage: image)
-//                                    }
-//                                }
-//                            }
-//                        }
                         
                         if let url = URL(string: imageLink){
                             do {
